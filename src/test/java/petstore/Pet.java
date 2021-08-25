@@ -51,11 +51,11 @@ public class Pet {
     }
     @Test(priority = 2)
     public void consultarPet(){
-        String petId = "1702199952";
+        String petId = "1702199956";
 
         String token =
         given()
-                .contentType("aplication/json")
+                .contentType("application/json")
                 .log().all()
         .when()
                 .get(uri + "/" + petId)
@@ -84,8 +84,25 @@ public class Pet {
         .then()
                 .log().all()
                 .statusCode(200)
-        .body("name", is("Romeu"))
-        .body("status", is("sold"))
+                .body("name", is("Romeu"))
+                .body("status", is("sold"))
+        ;
+    }
+    @Test(priority = 4)
+    public void excluirPet(){
+        String petId = "1702199956";
+
+        given()
+                .contentType("application/json")
+                .log().all()
+        .when()
+                .delete(uri + "/" + petId)
+        .then()
+                .log().all()
+                .statusCode(200)
+                .body("code", is(200))
+                .body("type", is("unknown"))
+                .body("message", is("1702199956"))
         ;
     }
 }
