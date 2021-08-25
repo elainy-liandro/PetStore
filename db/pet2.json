@@ -1,0 +1,18 @@
+{
+  "id": 1702199952,
+  "category": {
+    "id": 1,
+    "name": "AX15487LID"
+  },
+  "name": "Romeu",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 20210812,
+      "name": "data"
+    }
+  ],
+  "status": "sold"
+}
